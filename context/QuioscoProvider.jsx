@@ -91,6 +91,7 @@ const QuioscoProvider = ({children}) => {
     const handleElimanarProducto = id => {
         const pedidoActualizado = pedido.filter( producto => producto.id !== id)
         setPedido(pedidoActualizado)
+        toast.error('Pedido Eliminado')
     }
 
 

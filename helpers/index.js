@@ -5,6 +5,3 @@ export const formatearDinero = cantidad => {
         minimumFractionDigits: 0
     })
 } 
-
-
-

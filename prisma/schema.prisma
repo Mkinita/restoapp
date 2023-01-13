@@ -35,4 +35,5 @@ model Orden {
   total Float
   pedido Json
   estado Boolean  @default(false)
+  pago Boolean  @default(true)
 }

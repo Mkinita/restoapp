@@ -1,19 +1,18 @@
 import Image from "next/image"
 import axios  from 'axios'
 import { toast } from "react-toastify"
-import {formatearDinero} from "../helpers/index"
-import {formatiarFecha} from "../helpers/index"
 
 
-const Orden = ({orden}) => {
+
+const Cocina = ({orden}) => {
     const {id, nombre, total, pedido, fecha} = orden
 
-    const completarPago = async () => {
+    const completarOrden = async () => {
 
         try {
 
-           await axios.post(`/api/pagos/${id}`)
-            toast.success('Orden Pagada')
+           await axios.post(`/api/ordenes/${id}`)
+            toast.success('Orden Lista')
         } catch (error) {
             toast.error('Hubo un error')
         }
@@ -50,14 +49,14 @@ const Orden = ({orden}) => {
             ))}
         </div>
         <div className="md:flex md:items-center md:justify-between my-10">
-                <p className="mt-5 font-black text-4xl text-amber-500">Total a Pagar: {formatearDinero(total)}</p>
+                {/* <p className="mt-5 font-black text-4xl text-amber-500">Total a Pagar: {formatearDinero(total)}</p> */}
                 
                 <button
                 className="bg-indigo-600 hover:bg-indigo-700 text-white mt-5 md:mt-0 py-3 px-10 uppercase font-bold"
                 type="button"
-                onClick={completarPago}
+                onClick={completarOrden}
                 >
-                Pagar Orden
+                Completar Orden
 
                 </button>
         </div>
@@ -65,4 +64,4 @@ const Orden = ({orden}) => {
   )
 }
 
-export default Orden
+export default Cocina
