@@ -115,7 +115,7 @@ const QuioscoProvider = ({children}) => {
             toast.success('Pedido Realizado Correctamente')
 
             setTimeout(() =>{
-                router.push('/pago')
+                router.push('https://sandbox.flow.cl/btn.php?token=ew6qutr')
             },3000)
 
         } catch (error) {
