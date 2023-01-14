@@ -14,6 +14,7 @@ const QuioscoProvider = ({children}) => {
     const [pedido, setPedido] = useState([])
     const [nombre, setNombre] = useState('')
     const [total, setTotal] = useState(0)
+
     
 
     const router = useRouter()
@@ -42,6 +43,10 @@ const QuioscoProvider = ({children}) => {
 
         setTotal(nuevoTotal)
     }, [pedido])
+
+
+
+   
 
 
     
@@ -110,7 +115,7 @@ const QuioscoProvider = ({children}) => {
             toast.success('Pedido Realizado Correctamente')
 
             setTimeout(() =>{
-                router.push('/')
+                router.push('/pago')
             },3000)
 
         } catch (error) {

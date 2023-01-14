@@ -36,4 +36,5 @@ model Orden {
   pedido Json
   estado Boolean  @default(false)
   pago Boolean  @default(true)
+  cocina Boolean  @default(false)
 }

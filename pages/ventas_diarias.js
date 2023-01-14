@@ -1,11 +1,11 @@
 import useSWR from 'swr'
 import axios from 'axios'
-import CocinaLayout from "../layout/CocinaLayout"
-import Cocina from '../components/Cocina'
+import VentasDiariaLayout from "../layout/VentasDiariaLayout"
+import VentasDiarias from '../components/VentasDiarias'
 
 
 
-export default function admin_cocina() {
+export default function ventas_diarias() {
 
     const fetcher = () => axios('/api/ordenes').then(datos => datos.data)
     const { data, error, isLoading } = useSWR('/api/ordenes',fetcher,{refreshInterval: 100} )
@@ -14,20 +14,20 @@ export default function admin_cocina() {
      
 
     return(
-        <CocinaLayout pagina={'Cocina'}>
+        <VentasDiariaLayout pagina={'Ventas-Diarias'}>
 
-            <h1 className="text-4xl font-black">Área Cocina </h1>
-            <p className="text-2xl my-10">Preparar las Ordenes</p>
+            <h1 className="text-4xl font-black">Ventas Diarias </h1>
+            <p className="text-2xl my-10">Fecha: 13-01-2023</p>
 
             {data && data.length ? data.map(orden =>
                 
-                <Cocina
+                <VentasDiarias
                     key={orden.id}
                     orden={orden}
                 />
 
                 ):<p>No Hay Ordenes Pendientes</p>}
 
-        </CocinaLayout>
+        </VentasDiariaLayout>
     )
 }
