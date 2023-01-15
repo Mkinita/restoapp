@@ -13,7 +13,7 @@ const Cocina = ({orden}) => {
         try {
 
            await axios.post(`/api/ordenes/${id}`)
-            toast.success('Orden Lista')
+            toast.success('Su orden se esta preparando 😉')
             
         } catch (error) {
             toast.error('Hubo un error')
@@ -25,7 +25,7 @@ const Cocina = ({orden}) => {
   return (
     <div className="border p-10 space-y-5">
             {/* <h3 className="text-2xl font-bold">Orden: {id}</h3> */}
-            <p className="text-3xl font-bold text-center">{nombre}</p>
+            <p className="text-3xl font-bold text-center">Hola {nombre} ✌</p>
           
     
         <div>

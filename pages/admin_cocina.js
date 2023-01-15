@@ -14,10 +14,10 @@ export default function Admin() {
      
 
     return(
-        <AdminLayout pagina={'Admin'}>
+        <AdminLayout pagina={'Cocina'}>
 
-            <h1 className="text-4xl font-black">Panel Administrador</h1>
-            <p className="text-2xl my-10">Administra las Ordenes</p>
+            <h1 className="text-4xl font-black"> Área Cocina</h1>
+            <p className="text-2xl my-5"></p>
 
             {data && data.length ? data.map(orden =>
                 

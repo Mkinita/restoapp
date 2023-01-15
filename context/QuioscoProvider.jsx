@@ -112,7 +112,7 @@ const QuioscoProvider = ({children}) => {
             setNombre('')
             setTotal(0)
 
-            toast.success('Pedido Realizado Correctamente')
+            toast.success('Redirigiendo al Pago 🤑')
 
             setTimeout(() =>{
                 router.push('https://sandbox.flow.cl/btn.php?token=ew6qutr')

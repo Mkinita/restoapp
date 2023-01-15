@@ -21,7 +21,7 @@ export default function AdminLayout({ children, pagina }) {
                     alt="imagen logotipo"
                 />      
 
-                <SidebarAdmin/>
+                {/* <SidebarAdmin/> */}
             </aside>
 
             

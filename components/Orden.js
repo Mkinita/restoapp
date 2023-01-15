@@ -13,7 +13,7 @@ const Orden = ({orden}) => {
         try {
 
            await axios.post(`/api/pagos/${id}`)
-            toast.success('Orden Pagada')
+            toast.success('Orden Lista')
         } catch (error) {
             toast.error('Hubo un error')
         }
@@ -51,14 +51,14 @@ const Orden = ({orden}) => {
             ))}
         </div>
         <div className="md:flex md:items-center md:justify-between my-10">
-                <p className="mt-5 font-black text-4xl text-amber-500">Total a Pagar: {formatearDinero(total)}</p>
+                {/* <p className="mt-5 font-black text-4xl text-amber-500">Total a Pagar: {formatearDinero(total)}</p> */}
                 
                 <button
-                className="bg-indigo-600 hover:bg-indigo-700 text-white mt-5 md:mt-0 py-3 px-10 uppercase font-bold"
+                className="w-full bg-indigo-600 hover:bg-indigo-700 text-white mt-5 md:mt-0 py-3 px-10 uppercase font-bold"
                 type="button"
                 onClick={completarPago}
                 >
-                Pagar Orden
+                Completar Orden
 
                 </button>
         </div>
