@@ -30,7 +30,7 @@ export default function Layout({children, pagina}) {
       <Head>
             <title>Cafè - {pagina}</title>
             <meta name="description" content="Quiosco Cafeteria"/>
-            <link rel="shortcut icon" href="/assets/img/restoapp.png" />
+            
             
       </Head>
 
