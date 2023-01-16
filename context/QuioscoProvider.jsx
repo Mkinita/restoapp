@@ -46,6 +46,10 @@ const QuioscoProvider = ({children}) => {
 
 
 
+    
+
+
+
    
 
 
@@ -127,6 +131,7 @@ const QuioscoProvider = ({children}) => {
     }
 
 
+        // console.log(colocarOrden)
     
 
 
