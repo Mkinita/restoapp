@@ -26,6 +26,9 @@ const Cocina = ({orden}) => {
     <div className="border p-10 space-y-5">
             {/* <h3 className="text-2xl font-bold">Orden: {id}</h3> */}
             <p className="text-3xl font-bold text-center">Hola {nombre} ✌</p>
+            <p className="text-2xl font-bold text-center">Tu Pago Fue Realizado Con Éxito</p>
+            <p className="text-1xl font-bold text-center">Para Disfrutar De Tu Pedido Solo debes Confirma</p>
+            <p className="text-6xl font-bold text-center">😀</p>
           
     
         <div>

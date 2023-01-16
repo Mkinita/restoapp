@@ -28,6 +28,21 @@ export default function admin_cocina() {
 
                 ):<a className=" bg-indigo-600 hover:bg-indigo-700 text-white mt-5 md:mt-0 py-3 px-10 uppercase font-bold w-full"  href="/">Realizar Un pedido</a>}
 
+
+
+                
+
+                
         </CocinaLayout>
+
+
+
+
+
+
+
+
+
+
     )
 }
