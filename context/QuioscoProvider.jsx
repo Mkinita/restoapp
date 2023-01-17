@@ -8,12 +8,16 @@ const QuioscoContext = createContext()
 
 const QuioscoProvider = ({children}) => {
     const [categorias, setCategorias] = useState([])
+    const [pedidos, setPedidos] = useState([])
+    
     const [categoriaActual, setCategoriaActual] = useState({})
     const [producto, setProducto] = useState({})
     const [modal, setModal] = useState(false)
     const [pedido, setPedido] = useState([])
     const [nombre, setNombre] = useState('')
     const [total, setTotal] = useState(0)
+    // const [currentDate, setCurrentDate] = useState(new Date())
+
 
     
 
@@ -30,13 +34,34 @@ const QuioscoProvider = ({children}) => {
     },[])
 
 
+
+    const obtenerPedidos = async () => {
+        const {data} = await axios('/api/admin')
+        setPedidos(data)
+    }
+    useEffect(() => {
+        obtenerPedidos()
+    },[])
+
+
+
+    
+
+
+     
+
+    
+    
+
     useEffect(() => {
         setCategoriaActual(categorias[0])
     },[categorias])
 
 
+    useEffect(() => {
+        setCategoriaActual(categorias[0])
+    },[categorias])
 
-    
 
     useEffect(() => {
         const nuevoTotal = pedido.reduce((total, producto) => (producto.precio * producto.cantidad ) + total, 0)
@@ -47,7 +72,7 @@ const QuioscoProvider = ({children}) => {
 
 
     
-
+    
 
 
    
@@ -109,7 +134,7 @@ const QuioscoProvider = ({children}) => {
         e.preventDefault()
 
         try {
-           await axios.post('/api/ordenes',{pedido,nombre,total, fecha: Date.now().toString()})
+           await axios.post('/api/ordenes',{pedido,nombre,total, fecha: new Date()})
             // Resetear la app
             setCategoriaActual(categorias[0])
             setPedido([])
@@ -131,7 +156,7 @@ const QuioscoProvider = ({children}) => {
     }
 
 
-        // console.log(colocarOrden)
+        
     
 
 
@@ -155,8 +180,10 @@ const QuioscoProvider = ({children}) => {
             nombre,
             setNombre,
             colocarOrden,
-            total
+            total,
+            pedidos
         }}
+        
         
         >
             {children}

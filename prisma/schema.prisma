@@ -31,7 +31,7 @@ model Categoria {
 model Orden {
   id Int @id @default(autoincrement())
   nombre String
-  fecha String
+  fecha DateTime
   total Float
   pedido Json
   estado Boolean  @default(false)
