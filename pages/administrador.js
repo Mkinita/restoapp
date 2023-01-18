@@ -16,15 +16,15 @@ export default function ventas_diarias() {
 
     const fetcher = () => axios('/api/admin').then(datos => datos.data)
     const { data, error, isLoading } = useSWR('/api/admin',fetcher,{refreshInterval: 100} )
-    const {pedidos} =useQuiosco();
+    const {pedidos, fechas} =useQuiosco();
 
 
 
     
     let sum = 0;
 
-    for (let i = 0; i < pedidos.length; i++) {
-        sum += pedidos[i].total;
+    for (let i = 0; i < fechas.length; i++) {
+        sum += fechas[i].total;
     }
     
     
@@ -59,7 +59,7 @@ export default function ventas_diarias() {
             </table>
             
 
-            {data && data.length ? data.map(orden =>
+            {fechas && fechas.length ? fechas.map(orden =>
 
             
                 

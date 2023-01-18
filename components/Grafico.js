@@ -25,7 +25,7 @@ ChartJS.register(
 );
 
 
-const scores = [6, 5, 5];
+const scores = [22700, 69400, 9000];
 const labels = ['Niviembre', 'Diciembre', 'Enero'];
 
 const options = {
