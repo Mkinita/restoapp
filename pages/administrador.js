@@ -5,6 +5,8 @@ import VentasDiarias from '../components/VentasDiarias'
 import useQuiosco from "../hooks/useQuiosco";
 
 
+
+
  
 
 
@@ -14,7 +16,7 @@ export default function ventas_diarias() {
 
     const fetcher = () => axios('/api/admin').then(datos => datos.data)
     const { data, error, isLoading } = useSWR('/api/admin',fetcher,{refreshInterval: 100} )
-    const {pedidos,} =useQuiosco();
+    const {pedidos} =useQuiosco();
 
 
 

@@ -9,6 +9,9 @@ const QuioscoContext = createContext()
 const QuioscoProvider = ({children}) => {
     const [categorias, setCategorias] = useState([])
     const [pedidos, setPedidos] = useState([])
+    const [fechas, setFechas] = useState([])
+    const [fechauno, setFechauno] = useState([])
+    const [fechados, setFechados] = useState([])
     
     const [categoriaActual, setCategoriaActual] = useState({})
     const [producto, setProducto] = useState({})
@@ -41,6 +44,35 @@ const QuioscoProvider = ({children}) => {
     }
     useEffect(() => {
         obtenerPedidos()
+    },[])
+
+
+
+    const obtenerFechas = async () => {
+        const {data} = await axios('/api/fechas')
+        setFechas(data)
+    }
+    useEffect(() => {
+        obtenerFechas()
+    },[])
+
+
+    const obtenerFechasUno = async () => {
+        const {data} = await axios('/api/fechasuno')
+        setFechauno(data)
+    }
+    useEffect(() => {
+        obtenerFechasUno()
+    },[])
+
+
+
+    const obtenerFechasDos = async () => {
+        const {data} = await axios('/api/fechasdos')
+        setFechados(data)
+    }
+    useEffect(() => {
+        obtenerFechasDos()
     },[])
 
 
@@ -181,7 +213,10 @@ const QuioscoProvider = ({children}) => {
             setNombre,
             colocarOrden,
             total,
-            pedidos
+            pedidos,
+            fechas,
+            fechauno,
+            fechados
         }}
         
         
