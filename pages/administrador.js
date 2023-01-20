@@ -41,7 +41,7 @@ export default function ventas_diarias() {
             
 
             <h1 className="text-4xl font-black">Administrador</h1>
-            <p className="text-2xl my-10">Fecha:</p>
+            <p className="text-2xl my-10">Fecha:20-01-2023</p>
             
             
 
