@@ -94,8 +94,9 @@ export default function ultimos_meses() {
                             
             </table>
 
-
-            <Grafico/>
+            <div className='p-10'>
+                <Grafico/>
+            </div>
 
 
 
