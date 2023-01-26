@@ -19,6 +19,7 @@ export default function AdminLayout({ children, pagina }) {
       <div className="md:flex">
             <aside className="md:w-4/12 xl:w-1/4 2xl:w-1/5 py-5">
                 <Image
+                className="m-auto"
                     width={300}
                     height={100}
                     src="/assets/img/logo.png"
